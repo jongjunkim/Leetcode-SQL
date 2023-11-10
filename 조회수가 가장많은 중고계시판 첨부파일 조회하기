@@ -1,10 +1,26 @@
-https://school.programmers.co.kr/learn/courses/30/lessons/164671
 
-```Python
+
+``` Python
 select CONCAT("/home/grep/src/" , ugf.BOARD_ID, "/" , FILE_ID, FILE_NAME, FILE_EXT) as FILE_PATH from( 
 SELECT BOARD_ID, row_number() over(order by views desc) as most from USED_GOODS_BOARD limit 1) as sub
 join USED_GOODS_FILE ugf on ugf.BOARD_ID = sub.BOARD_ID 
 order by FILE_ID desc
 ```
 
-CONCAT(string, string, string)
+* CONCAT(string, string, string)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/164671
+
+
+ ```Python
+try:
+  cur.execute("BEGIN;")
+  cur.execute("DELETE FROM jongjun.name_gender;") 
+  cur.execute("INSERT INTO jongjun.name_gender VALUES ('Claire', 'Female');")
+  cur.execute("END;")
+except (Exception, psycopg2.DatabaseError) as error:
+  print(error)
+  cur.execute("ROLLBACK;")
+finally :
+  conn.close()
+```   
