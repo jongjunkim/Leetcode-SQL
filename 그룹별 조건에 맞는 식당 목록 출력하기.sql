@@ -1,0 +1,6 @@
+select MEMBER_NAME, REVIEW_TEXT, left(REVIEW_DATE,10) REVIEW_DATE from MEMBER_PROFILE m
+join REST_REVIEW r on r.MEMBER_ID = m.MEMBER_ID
+where r.MEMBER_ID in (SELECT MEMBER_ID from REST_REVIEW 
+group by MEMBER_ID having count(*) = 
+(select count(*) from REST_REVIEW group by MEMBER_ID order by count(*) desc limit 1))
+order by REVIEW_DATE asc, REVIEW_TEXT asc
