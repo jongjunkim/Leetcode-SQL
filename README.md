@@ -37,5 +37,14 @@ SELECT
 FROM Orders;
 ```
 
+* Use Intersect instead of with CTE
+
+```
+select CART_ID from (
+SELECT CART_ID from CART_PRODUCTS where Name = "Milk"
+INTERSECT
+SELECT CART_ID from CART_PRODUCTS where Name = "Yogurt"
+) as a
+
 
 https://www.yalco.kr/@sql/1-4/
