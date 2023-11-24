@@ -37,7 +37,7 @@ SELECT
 FROM Orders;
 ```
 
-* Use Intersect instead of with CTE
+* Intersect
 
 ```
 select CART_ID from (
