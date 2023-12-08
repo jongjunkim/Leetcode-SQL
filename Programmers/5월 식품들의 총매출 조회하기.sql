@@ -6,3 +6,5 @@ join FOOD_ORDER O on P.PRODUCT_ID = O.PRODUCT_ID
 where PRODUCE_DATE LIKE "2022-05-%"
 group by P.PRODUCT_ID
 order by  SUM(PRICE*AMOUNT) desc, P.PRODUCT_ID asc
+
+https://school.programmers.co.kr/learn/courses/30/lessons/131117
